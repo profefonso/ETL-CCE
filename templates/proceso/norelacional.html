@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+
+{% block tittle %}
+No-Relacional
+{% endblock %}
+
+{% block cssextra %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <h1>Procesos en Base de datos NO - Relacional</h1>
+    <a href="/etl_mongodb/" class="btn btn-outline-info">Ejecutar ETL</a>
+    <a href="/cleanmdb/" class="btn btn-outline-danger">Limpiar MONGODB</a>
+    <hr class="my-4">
+    <table class="table table-hover" id="datatableetl">
+        <thead>
+        <tr class="table-success">
+            <th>Proceso</th>
+            <th>Entidad</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Cuantia</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if procesos %}
+        {% for proceso in procesos %}
+        <tr>
+            <td>{{ proceso.codigo }}</td>
+            <td>{{ proceso.entidad }}</td>
+            <td>{{ proceso.tipo }}</td>
+            <td>{{ proceso.estado }}</td>
+            <td>{{ proceso.cuantia }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="5">
+                <h3>No Hay Registros</h3>
+            </td>
+        </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block jsextra %}
+{% endblock %}

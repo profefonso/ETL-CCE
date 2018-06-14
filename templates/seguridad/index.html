@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+
+{% block tittle %}
+Bienvenido
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1>GESTOR SIR</h1>
+                <p class="lead">Gestion SQL base de Datos</p>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div class="sponsor">
+                    <p class="lead">TSG 2018</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
+        <div class="card-header">Operaciones</div>
+        <div class="card-body">
+            <h4 class="card-title">Seleccione Operacion</h4>
+            <form method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            {{ form.operacion }}
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="my-4">
+                <button type="submit" class="btn btn-info">Continuar</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

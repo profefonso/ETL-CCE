@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+
+{% block tittle %}
+Relacional
+{% endblock %}
+
+{% block cssextra %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <h1>Procesos en Base de datos relacional</h1>
+    <a href="/relacional/new" class="btn btn-outline-info">Agregar Proceso</a>
+    <hr class="my-4">
+    <table class="table table-hover" id="datatableetl">
+        <thead>
+        <tr class="table-success">
+            <th>Proceso</th>
+            <th>Entidad</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Cuantia</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if object_list %}
+        {% for proceso in object_list %}
+        <tr>
+            <td>{{ proceso.CodigoProceso }}</td>
+            <td>{{ proceso.CodigoEntidad }}</td>
+            <td>{{ proceso.ID_TipoProceso }}</td>
+            <td>{{ proceso.ID_EstadoProceso }}</td>
+            <td>{{ proceso.Cuantia }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h3>No Hay Registros</h3>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block jsextra %}
+{% endblock %}

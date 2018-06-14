@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block tittle %}
+Proceso
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">API ETL</h1>
+        <p class="lead">Para usar el api etl siga las siguientes instrucciones.</p>
+        <hr class="my-4">
+        <p>Si desea ver todos los procesos actuales:</p>
+        <p class="lead">
+            <a class="btn btn-outline-success" href="/api/procesos/" target="_blank" role="button">Procesos Actuales</a>
+        </p>
+        <hr class="my-4">
+        <p>Consultar un proceso:</p>
+        <div class="form-group">
+            <input type="text" class="form-control" id="consulta" placeholder="Ingrese el codigo">
+        </div>
+        <p class="lead">
+            <a class="consultaapibtn btn btn-outline-warning" href="#" role="button">Consultar</a>
+        </p>
+        <hr class="my-4">
+        <p>Si desea ver la documentacion del API:</p>
+        <p class="lead">
+            <a class="btn btn-outline-info" href="/api/docs/" target="_blank" role="button">Documentación</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
